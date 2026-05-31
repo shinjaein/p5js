@@ -1,40 +1,155 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>p5.js 작품 모음</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>p5.js 작품 모음</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 24px;
+      background: white;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: #333;
+      letter-spacing: -0.5px;
+    }
+
+    #projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      max-width: 1300px;
+      gap: 24px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .project-title {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 12px 16px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: -0.3px;
+    }
+
+    .project-canvas {
+      width: 100%;
+      height: 450px;
+      position: relative;
+      overflow: hidden;
+      background: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-canvas iframe {
+      width: 600px;
+      height: 400px;
+      border: none;
+      overflow: hidden;
+    }
+
+    .project-description {
+      padding: 16px;
+      background: #f8f9fa;
+      color: #333;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      text-align: center;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      #projects {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>나의 p5.js 작품</h1>
-        <p>아래 링크를 클릭하여 다양한 p5.js 프로그램을 감상하세요.</p>
-    </header>
 
-    <section id="projects">
-    
-        <div class="project">
-            <a href="sample1/index.html">
-                프로젝트 1: 추상화 그리기
-            </a>
-        </div>
-    
-        <div class="project">
-            <a href="sample2/index.html">
-                프로젝트 2: 초상화 그리기
-            </a>
-        </div>
-        <div class="project">
-            <a href="sample3/index.html">
-                프로젝트 3: 움직이는 초상화
-            </a>
-        </div>
-        <div class="project">
-            <a href="sample4/index.html">
-                프로젝트 4: 움직이는 추상화
-            </a>
-        </div>
-    </section>
+  <h1>나의 p5.js 작품</h1>
+
+  <main id="projects">
+
+    <div class="project-card">
+      <div class="project-title">과제1 (추상화 그리기)</div>
+      <div class="project-canvas">
+        <iframe src="sample1/index.html" scrolling="no"></iframe>
+      </div>
+      <div class="project-description">
+        바다에 떠있는 돛단배와 강렬한 햇빛 그리고 폭죽
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">과제4 (시간에 따른 추상화의 움직임)</div>
+      <div class="project-canvas">
+        <iframe src="sample4/index.html" scrolling="no"></iframe>
+      </div>
+      <div class="project-description">
+        시간에 따라 해가 지고 폭죽이 터지며, 바다에 떠다니며 점점 돛이 해지고 있는 돛단배
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">과제2 (캐릭터 그리기)</div>
+      <div class="project-canvas">
+        <iframe src="sample2/index.html" scrolling="no"></iframe>
+      </div>
+      <div class="project-description">
+        안경을 쓰고 웃고 있는 나와 전공책
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">과제3 (움직이는 캐릭터 그리기)</div>
+      <div class="project-canvas">
+        <iframe src="sample3/index.html" scrolling="no"></iframe>
+      </div>
+      <div class="project-description">
+        마우스를 따라 움직이는 해를 보며 웃다가 클릭시 눈을 감는 나와 "O"키를 누르면 열리는 전공책
+      </div>
+    </div>
+
+  </main>
+
 </body>
 </html>
